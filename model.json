@@ -1,0 +1,195 @@
+{
+  "modelName": "环境监测与控制系统",
+  "productKey": "9988776655443322",
+  "attributes": [
+    {
+      "name": "温度",
+      "dataType": "float",
+      "accessMode": "r",
+      "identifier": "temperature",
+      "description": "当前环境温度，单位为摄氏度"
+    },
+    {
+      "name": "湿度",
+      "dataType": "float",
+      "accessMode": "r",
+      "identifier": "humidity",
+      "description": "当前环境湿度，单位为百分比"
+    },
+    {
+      "name": "气压",
+      "dataType": "float",
+      "accessMode": "r",
+      "identifier": "pressure",
+      "description": "当前环境气压，单位为帕斯卡"
+    },
+    {
+      "name": "光照强度",
+      "dataType": "int",
+      "accessMode": "r",
+      "identifier": "lightIntensity",
+      "description": "当前光照强度，单位为勒克斯"
+    },
+    {
+      "name": "烟雾浓度",
+      "dataType": "int",
+      "accessMode": "r",
+      "identifier": "smokeDensity",
+      "description": "当前烟雾浓度，单位为PPM"
+    },
+    {
+      "name": "继电器1状态",
+      "dataType": "string",
+      "accessMode": "rw",
+      "identifier": "relay1Status",
+      "description": "继电器1的当前状态（开或关）"
+    },
+    {
+      "name": "继电器2状态",
+      "dataType": "string",
+      "accessMode": "rw",
+      "identifier": "relay2Status",
+      "description": "继电器2的当前状态（开或关）"
+    },
+    {
+      "name": "继电器3状态",
+      "dataType": "string",
+      "accessMode": "rw",
+      "identifier": "relay3Status",
+      "description": "继电器3的当前状态（开或关）"
+    },
+    {
+      "name": "继电器4状态",
+      "dataType": "string",
+      "accessMode": "rw",
+      "identifier": "relay4Status",
+      "description": "继电器4的当前状态（开或关）"
+    },
+    {
+      "name": "断路器状态",
+      "dataType": "string",
+      "accessMode": "rw",
+      "identifier": "circuitBreakerStatus",
+      "description": "断路器的当前状态（开或关）"
+    }
+  ],
+  "events": [
+    {
+      "name": "继电器状态变更",
+      "identifier": "relayStatusChange",
+      "outputData": [
+        {
+          "name": "继电器编号",
+          "dataType": "int",
+          "identifier": "relayNumber",
+          "description": "发生状态变更的继电器编号"
+        },
+        {
+          "name": "新状态",
+          "dataType": "string",
+          "identifier": "newStatus",
+          "description": "继电器的新状态（开或关）"
+        }
+      ],
+      "description": "继电器状态发生变更时触发"
+    },
+    {
+      "name": "断路器状态变更",
+      "identifier": "circuitBreakerStatusChange",
+      "outputData": [
+        {
+          "name": "新状态",
+          "dataType": "string",
+          "identifier": "newStatus",
+          "description": "断路器的新状态（开或关）"
+        }
+      ],
+      "description": "断路器状态发生变更时触发"
+    }
+  ],
+  "functions": [
+    {
+      "name": "设置继电器状态",
+      "inputData": [
+        {
+          "name": "继电器编号",
+          "dataType": "int",
+          "identifier": "relayNumber",
+          "description": "要设置状态的继电器编号"
+        },
+        {
+          "name": "目标状态",
+          "dataType": "string",
+          "identifier": "desiredStatus",
+          "description": "要设置的目标状态（开或关）"
+        }
+      ],
+      "identifier": "setRelayStatus",
+      "outputData": [
+        {
+          "name": "设置结果",
+          "dataType": "string",
+          "identifier": "result",
+          "description": "继电器状态设置操作的结果"
+        }
+      ],
+      "description": "设置指定继电器的状态"
+    },
+    {
+      "name": "查询继电器状态",
+      "inputData": [
+        {
+          "name": "继电器编号",
+          "dataType": "int",
+          "identifier": "relayNumber",
+          "description": "要查询状态的继电器编号"
+        }
+      ],
+      "identifier": "getRelayStatus",
+      "outputData": [
+        {
+          "name": "继电器状态",
+          "dataType": "string",
+          "identifier": "relayStatus",
+          "description": "查询到的继电器状态（开或关）"
+        }
+      ],
+      "description": "查询指定继电器的当前状态"
+    },
+    {
+      "name": "设置断路器状态",
+      "inputData": [
+        {
+          "name": "目标状态",
+          "dataType": "string",
+          "identifier": "desiredStatus",
+          "description": "要设置的目标状态（开或关）"
+        }
+      ],
+      "identifier": "setCircuitBreakerStatus",
+      "outputData": [
+        {
+          "name": "设置结果",
+          "dataType": "string",
+          "identifier": "result",
+          "description": "断路器状态设置操作的结果"
+        }
+      ],
+      "description": "设置断路器的状态"
+    },
+    {
+      "name": "查询断路器状态",
+      "inputData": [],
+      "identifier": "getCircuitBreakerStatus",
+      "outputData": [
+        {
+          "name": "断路器状态",
+          "dataType": "string",
+          "identifier": "circuitBreakerStatus",
+          "description": "查询到的断路器状态（开或关）"
+        }
+      ],
+      "description": "查询断路器的当前状态"
+    }
+  ]
+}

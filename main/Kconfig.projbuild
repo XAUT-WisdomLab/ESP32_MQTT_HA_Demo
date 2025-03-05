@@ -1,0 +1,22 @@
+menu "Demo Configuration"
+    
+config ESP_WIFI_STA_SSID
+    string "Wi-Fi SSID"
+    default "XXXXXXXXXX"
+    help
+        Set the SSID of the Wi-Fi network to which the device will connect.
+
+config ESP_WIFI_STA_PASSWD
+    string "Wi-Fi Password"
+    default "XXXXXXX"
+    help
+        Set the password of the Wi-Fi network to which the device will connect.
+ 
+config MQTT_HOST_URL
+    string "MQTT Host URL"
+    default "mqtt://XXXXXXXXX:1883"
+    help
+        Set the URL of the MQTT broker to which the device will connect.
+               
+endmenu
+

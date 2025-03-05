@@ -19,14 +19,14 @@
 #include "cJSON.h"
 
 // Wi-Fi配置
-#define ESP_WIFI_STA_SSID "603yingteng"
-#define ESP_WIFI_STA_PASSWD "31415926"
+#define ESP_WIFI_STA_SSID CONFIG_ESP_WIFI_STA_SSID
+#define ESP_WIFI_STA_PASSWD CONFIG_ESP_WIFI_STA_PASSWD
 
 // MQTT配置
 #define MQTT_CLIENT_ID "ESP32-%s"
 #define MQTT_USERNAME "ESP32-%s"
 #define MQTT_PASSWD "ESP32-%s"
-#define MQTT_HOST_URL "mqtt://101.201.77.242:1883"
+#define MQTT_HOST_URL CONFIG_MQTT_HOST_URL
 
 // MQTT主题
 #define MQTT_STATE_TOPIC_FMT "home/device/%s/state"

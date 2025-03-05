@@ -208,9 +208,3 @@ homeassistant/switch/{device_id}_circuit_breaker/config
 		"circuit_breaker": 1
 }
 ```
-
-## 附件: 
-
-阿里云物模型: [model.zip](attachments/model.zip)
-
-
